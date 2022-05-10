@@ -15,3 +15,4 @@ Currently our group is leaning towards utilizing a SQL/PostGres database with th
 
 ## Chosen Machine Learning Model
 Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated.  We would like to use a regression ML model to understand which movie production factors lead to the highest box office success, as well as which attributes are either not correlated/connected.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here.
+
