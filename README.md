@@ -2,10 +2,10 @@
 Final-Project_Group-5 Main repository for UofM Data Visualization &amp;amp; Analytics Boot Camp Final Project (Group 5), hosted by Max Schweikl, Stephanie Leonard, Randy Sendek, Lucas Bratland and Bailey Van Ommeren
 
 ## Project Topic
-Our team would like to determine what a future movie release will earn for revenue at the box office based on a variety of input factors that go in to the production, including but not limited to the movie cast, crew, posteres production companies, release date, and so on.
+Our team would like to determine what a future movie release will earn for revenue at the box office based on a variety of input factors that go in to the production, including but not limited to the director, movie cast, crew, posters/marketing, production companies, release date, and so on.  This will be a classification question to answer, in that "success" will be defined as if the movie doubled it's production spend in generated revenue results.
 
 ## Dataset Chosen
-We will be utilizing a Kaggle .csv dataset that provides ~7400 movies and a variety of different movie attributes, some of which were called out in the project topic headline above.
+We will be utilizing a .csv dataset provided by the University of Minnesota that provides +$25M movie entries and a variety of different movie attributes, some of which were called out in the project topic headline above.
 
 ## Tools to Clean Data
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
