@@ -15,6 +15,8 @@ The following datasets will be used:
 - credits.csv
 - ratings.csv
 
+Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/rounakbanik/the-movies-dataset/download).
+
 ## Tools to Clean Data
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
 
