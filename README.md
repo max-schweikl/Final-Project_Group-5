@@ -312,17 +312,43 @@ We have the following tables loaded and ready for further analysis:
 Now that we have the data in tables in the database, we can do the next stages of data analysis with SQL.
 
 <ul>
+<ul>
+<li>Cast</li>
+<ul>
+<li>The cast list generated does not have unique identifiers for an actor. It has a movie id and a cast id which is unique for a person. But to search for all movies by a person, would take a search for the person's name in the movies table.</li>
+<li>The cast list will have to processed down to a unique list of names.</li>
+<li>Unique IDs will have to be assigned to be assigned to that list.</li>
+<li><img src="week1/cast_unique.png"></li>
+<li>Then the new unique ids will have to be substituted into the cast table for the original cast_id.</li>
+<li><img src="week1/cast_fixed.png"></li>
+</ul>
+<li>Crew</li>
+<ul>
+<li>The crew list generated does not have unique identifiers for a crew member. It has a movie id and a crew id which is unique for a person. But to search for all movies by a person, would take a search for the person's name in the movies table. </li>
+<li>The crew list will have to processed down to a unique list of names. </li>
+<li>Unique IDs will have to be assigned to be assigned to that list.</li>
+<li><img src="week1/crew_unique.png"></li>
+<li>Then the new unique ids will have to be substituted into the crew table for the original crew_id.</li>
+<li><img src="week1/crew_fixed.png"></li>
+</ul>
 <li>The ratings table contains ratings for 7,567 movies. We will provide two version of the movie table:</li>
 <ul>
 <li>The original table with 45,454 movies with TMDB average scores and vote counts</li>
 <li>The new table with 7,567 ratings based on a 5 star system from users of MovieLens.</li>
-<li>The finally thing we will have to do to finalize the data for analysis is when the counts for ratings were calculated, there a number of columns with NULL as the value. We will have to replace those NULLs with zeros.</li>
+<li>The final thing we will have to do to finalize the data for analysis is when the counts for ratings were calculated, there a number of columns with NULL as the value. We will have to replace those NULLs with zeros.</li>
 <li><img src="week1/ratings_count2.png"></li>  
 </ul>
-<li>we have found a number of columns which look like JSON lists. we will have to process these into new tables:</li>
+<li>we have found a number of columns which look like JSON lists.</li>
 <ul>
 <li>Production Company</li>
 <li>Genre</li>
+</ul>
+<li>These fields will have to to be processed to produce the following:</li>
+<ul>
+<li>A unique list of options for production company</li>
+<li>A unique list of options for genre</li>
+<li>Process the field to build a new table which contains a movieid and a production company id for each entry found in the data</li>
+<li>Process the field to build a new table which contains a movieid and a genre id for each entry found in the data</li>
 </ul>
 </ul>
 
