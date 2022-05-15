@@ -22,6 +22,10 @@ Currently our group is leaning towards utilizing a SQL/PostGres database with th
 ## Chosen Dashboard
 Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated. 
 
+## High Level Project Plan Diagram
+Find below a high-level project plan diagram
+
+![Project Plan](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Project_Plan.PNG)
 <br>
 <hr/>
 
