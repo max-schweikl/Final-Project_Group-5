@@ -11,7 +11,13 @@ The planned features that we will be using are
 - production studio
 - genre
 - tmdb rating
-- imdb rating
+- MovieLens rating
+- budget
+- production country
+- runtime
+
+
+
 
 ## The machine learning model
 This is considered a supervised machine learning model as we know the y value for the data. This is a classification type model as we are trying to predict a yes or no. Our initial plan is to use a regression machine learning model to help us understand which features are strongly connected to a movie's success. 
