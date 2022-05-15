@@ -10,6 +10,13 @@ Our team all has an interest in various movie genres and love to watch both new 
 ## Dataset Chosen
 At the moment, we will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  If this dataset is too large/overvalued, we will transition to an alternative option, which there are plenty available on the internet, most notably datasets accessed via IMDB.
 
+The following datasets will be used:
+- movies_metadata.csv
+- credits.csv
+- ratings.csv
+
+Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/rounakbanik/the-movies-dataset/download).
+
 ## Tools to Clean Data
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
 
@@ -17,8 +24,15 @@ Python and Pandas will be utilized to clean our dataset throughout the length of
 Currently our group is leaning towards utilizing a SQL/PostGres database with the raw data contents being extracted as a .csv file.
 
 ## Chosen Machine Learning Model
-Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated.  We would like to use a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
+ We would like to use a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
 
+## Chosen Dashboard
+Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated. 
+
+## High Level Project Plan Diagram
+Find below a high-level project plan diagram
+
+![Project Plan](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Project_Plan.PNG)
 <br>
 <hr/>
 
