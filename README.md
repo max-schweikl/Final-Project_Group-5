@@ -10,6 +10,11 @@ Our team all has an interest in various movie genres and love to watch both new 
 ## Dataset Chosen
 At the moment, we will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  If this dataset is too large/overvalued, we will transition to an alternative option, which there are plenty available on the internet, most notably datasets accessed via IMDB.
 
+The following datasets will be used:
+- movies_metadata.csv
+- credits.csv
+- ratings.csv
+
 ## Tools to Clean Data
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
 
