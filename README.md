@@ -1,6 +1,10 @@
 # Final-Project_Group-5
 Final-Project_Group-5 Main repository for UofM Data Visualization &amp;amp; Analytics Boot Camp Final Project (Group 5), hosted by Max Schweikl, Stephanie Leonard, Randy Sendek, Lucas Bratland and Bailey Van Ommeren
 
+## Google Slides Link
+
+**Download Presentation >** [Goodle Slide Presentation] (https://docs.google.com/presentation/d/1aXPEPfQH5vqG8aXMZKgjvpEcCv2Iga9h14h-E72lNf8/edit?usp=sharing)
+
 ## Communication Plan/Alignment
 Our team was very specific around our schedules of availability over the course of this project.  The goal is to complete most or all deliverable work within alloted class hours, with the additional option for the team to meet/discuss ad-hoc outside of classroom hours as needed.  Slack will servie as the primary and most crucial communication tool for all project work, including but not limited to link sharing, direct group messaging and formal huddle/Zoom meeting.  One critical component will be aligning to a role ownership each week.  While some team members have more comfortability/favorability of roles over others, we will still make sure each role has the support ownership needed to exceed, whether it's doubling up on some work or a team member owning a component role more than once if they're efficiently completing deliverables in that space.
 
