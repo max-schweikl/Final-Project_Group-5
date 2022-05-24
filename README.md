@@ -30,7 +30,7 @@ Currently our group is leaning towards utilizing a SQL/PostGres database with th
  We would like to use a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
 
 ## Chosen Dashboard
-Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated. 
+Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated.  We may also provide this visualization via an HTML webpage with Javascript-enabled table(s) for interactivity, which would include features such as drop-down menu for inputting various movie attributes to determine output success measurement factors. 
 
 ## High Level Project Plan Diagram
 Find below a high-level project plan diagram
@@ -282,7 +282,7 @@ After the process runs, our final crew dataframe looks like:
 
 ## Calculated Fields
 
-## Ratings
+### Ratings
 
 Our data file for ratings, rating.csv, has 26,024,289 ratings for movies. The first set of calculated fields we want to do is to do counts of ratings by movie. 
 
@@ -292,7 +292,7 @@ This will allow us to add these values to the movies data, and not have to keep 
 
 <img src="week1/movies_ratings_prep.png">
 
-# First pass at Database
+# First Pass at Database
 
 Now that our data is ready, we can build the three tables we need
 
