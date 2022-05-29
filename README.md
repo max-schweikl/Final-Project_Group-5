@@ -30,7 +30,13 @@ We'll be utilizing a SQL/PostGres database with the raw data contents being extr
  We will be building a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
 
 ## Chosen Dashboard
-Our team has chosen two visualization methods for this project.  The first being a Tableau dashboard, which shows, by genre (as a drop-down option), the total revenue by year trend over time, total number of movies that are successful or unsuccessful, average revenue and rating, list of top movies by rating and revenue, and finally the total revenue over all measured years.  The second visualization is an HTML webpage with Javascript-enabled drop-down filters, which will be utilized for plugging in various movie attributes (ex: genre, cast/crew, release date, etc.) for plugging in and seeing which have the higher influence in determining movie success. 
+Our team has chosen two visualization methods for this project.  The first being a Tableau dashboard, which shows, by genre (as a drop-down option), the total revenue over all years for the measured drop-down option, top movies by revenue and rating, average revenue and rating, the number of successful vs failed movies (success being defined as a movie making twice it's budget in revenue), and a line chart graph that measures genre by year (x-axis = year of movie release, y-axis = total revenue for all measured movies based on drop-down selection).
+- Link to Tableau storyboard can be found [here](https://docs.google.com/presentation/d/1ppohUS7lz0ywqLALRNWI7Y0NSrHBQvtAunWuu660ZdE/edit#slide=id.p)
+- Link to Tableau dashboard can be found [here](https://public.tableau.com/app/profile/bailey.van.ommeren/viz/FinalProjectDashboard_16535275197320/Dashboard1?publish=yes)
+- Link to additional Tableau dashboard purpose/results/summary is also linked on Github [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Tableau_Dashboard.md)
+
+The second visualization is an HTML webpage with Javascript-enabled drop-down filters, which will be utilized for plugging in various movie attributes (ex: genre, cast/crew, release date, etc.) for plugging in and seeing which have the higher influence in determining movie success. 
+- Link to HTML webpage will be provided soon
 
 ## High Level Project Plan Diagram
 Find below a high-level project plan diagram
