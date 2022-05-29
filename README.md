@@ -11,14 +11,15 @@ Our team was very specific around our schedules of availability over the course 
 Our team all has an interest in various movie genres and love to watch both new films that are released as well as old films from prior years, and discuss our thoughts or opinions as to if we enjoyed the movie or not.  That being said, one area of curiosity is if one or more team member(s) likes a film, are they necessarily in the majority or not with others on the same opinions or views?  What exactly classifies a film as "successful" or "unsuccessful?"  What are the various input components of a film, such as cast/crew, producer, genre, production budget, release date and so on, that have the most influence on a film's success or not?  The question our group is looking to answer will be that of classification, in that for past released films, what input factors correlate the most with or drive the most success for a film, which we're defining as it's generated box office revenue producing at or more than double it's production budget.  From this, we can also hope to predict or infer on how successful future released films will be, based on prior trend of movies with similar production attributes.
 
 ## Dataset Chosen
-We will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  If this dataset is too large/overvalued, we will transition to an alternative option, which there are plenty available on the internet, most notably datasets accessed via IMDB.
+We will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  To help keep the dataset from getting to large, we will add a .csv which identifies the top 100 actors by revenue.
 
 The following datasets will be used:
 - movies_metadata.csv
 - credits.csv
 - ratings.csv
+- Top100.csv
 
-Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/rounakbanik/the-movies-dataset/download).
+Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/rounakbanik/the-movies-dataset/download) and [this website](https://www.the-numbers.com/box-office-star-records/domestic/lifetime-acting/top-grossing-leading-stars).
 
 ## Tools to Clean Data
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
@@ -297,6 +298,24 @@ This will allow us to add these values to the movies data, and not have to keep 
 
 <img src="week1/movies_ratings_prep.png">
 
+### Cast
+
+We incorporated the Top 100 actors by revenue list into the cast table. We added a field to the Cast table called Top100, we read in the top 100 list, and determined if the cast member of the movie was a part of the list:
+ - If so, we set Top100 to true
+ - If not, we set Top100 to false
+
+<img src="week3/cast_top_100.png">
+
+### Movie
+
+We determined our question for this was revolving around revenue and success of the movie. We added a field to both movie tables, success_level, which is a calculated field of two times the  movie’s budget
+
+ - [success_level] = [budget] * 2
+
+We added a field to both movie tables, success, which determine if revenues was higher than the calculated success level
+ - [success] = ([revenue] >= [success_level])
+
+
 ## First Pass at Database
 
 Now that our data is ready, we can build the three tables we need
@@ -363,3 +382,7 @@ Now that we have the data in tables in the database, we can do the next stages o
 ## Next Steps after Data Prep
 
 Once the data is loading correctly into a PostgreSQL database on the local workstation, and we know that our ETL pipeline is functioning. We will migrate the database to a cloud based host so the rest of the team can access the prepared dataset.
+
+The final data structure of the database looks like:
+
+<img src="week3/final_db.png">
