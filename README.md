@@ -315,6 +315,11 @@ We determined our question for this was revolving around revenue and success of 
 We added a field to both movie tables, success, which determine if revenues was higher than the calculated success level
  - [success] = ([revenue] >= [success_level])
 
+<img src="week3/movie_success.png">
+
+In the MovieLens table with the star ratings we added three new calculated fields. To aid the analysis team, the ETL pipeline needed to add a field to calculate the total number of votes a movie got from MovieLens members. The next field we needed to add was a field for the total number of stars garnered by the movie. The final new field we calculated is field showing the average number of stars per vote.
+
+<img src="week3/avg_star.png">
 
 ## First Pass at Database
 
