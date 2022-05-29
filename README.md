@@ -11,7 +11,7 @@ Our team was very specific around our schedules of availability over the course 
 Our team all has an interest in various movie genres and love to watch both new films that are released as well as old films from prior years, and discuss our thoughts or opinions as to if we enjoyed the movie or not.  That being said, one area of curiosity is if one or more team member(s) likes a film, are they necessarily in the majority or not with others on the same opinions or views?  What exactly classifies a film as "successful" or "unsuccessful?"  What are the various input components of a film, such as cast/crew, producer, genre, production budget, release date and so on, that have the most influence on a film's success or not?  The question our group is looking to answer will be that of classification, in that for past released films, what input factors correlate the most with or drive the most success for a film, which we're defining as it's generated box office revenue producing at or more than double it's production budget.  From this, we can also hope to predict or infer on how successful future released films will be, based on prior trend of movies with similar production attributes.
 
 ## Dataset Chosen
-At the moment, we will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  If this dataset is too large/overvalued, we will transition to an alternative option, which there are plenty available on the internet, most notably datasets accessed via IMDB.
+We will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  If this dataset is too large/overvalued, we will transition to an alternative option, which there are plenty available on the internet, most notably datasets accessed via IMDB.
 
 The following datasets will be used:
 - movies_metadata.csv
@@ -24,13 +24,13 @@ Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
 
 ## Chosen Database
-Currently our group is leaning towards utilizing a SQL/PostGres database with the raw data contents being extracted as a .csv file.
+We'll be utilizing a SQL/PostGres database with the raw data contents being extracted as a .csv file.  once ETL is performed and the database is established, this will also be shared on an AWS RDS site for team collaboration.
 
 ## Chosen Machine Learning Model
- We would like to use a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
+ We will be building a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
 
 ## Chosen Dashboard
-Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated.  We may also provide this visualization via an HTML webpage with Javascript-enabled table(s) for interactivity, which would include features such as drop-down menu for inputting various movie attributes to determine output success measurement factors. 
+Our team has chosen two visualization methods for this project.  The first being a Tableau dashboard, which shows, by genre (as a drop-down option), the total revenue by year trend over time, total number of movies that are successful or unsuccessful, average revenue and rating, list of top movies by rating and revenue, and finally the total revenue over all measured years.  The second visualization is an HTML webpage with Javascript-enabled drop-down filters, which will be utilized for plugging in various movie attributes (ex: genre, cast/crew, release date, etc.) for plugging in and seeing which have the higher influence in determining movie success. 
 
 ## High Level Project Plan Diagram
 Find below a high-level project plan diagram
@@ -39,12 +39,12 @@ Find below a high-level project plan diagram
 <br>
 <hr/>
 
-# Data Analysis
+## Data Analysis
 
-## Data Source Selected
+### Data Source Selected
 Our group selected to utilize the full Kaggel movie database which was first seen in module 8 of the bootcamp, dealing with ETL. We chose this data source for completeness, size, and variability. 
 
-## Description of Source Data
+### Description of Source Data
 
 These files contain metadata for all 45,000 movies listed in the Full MovieLens Dataset. The dataset consists of movies released on or before July 2017. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages.
 
@@ -279,7 +279,6 @@ After the process runs, our final crew dataframe looks like:
 
 <img src="week1/crew_data.png">
 
-
 ## Calculated Fields
 
 ### Ratings
@@ -292,7 +291,7 @@ This will allow us to add these values to the movies data, and not have to keep 
 
 <img src="week1/movies_ratings_prep.png">
 
-# First Pass at Database
+## First Pass at Database
 
 Now that our data is ready, we can build the three tables we need
 
@@ -310,7 +309,7 @@ We have the following tables loaded and ready for further analysis:
 </ul>
 </ul>
 
-# Next Steps in Data Prep for Analysis
+## Next Steps in Data Prep for Analysis
 
 Now that we have the data in tables in the database, we can do the next stages of data analysis with SQL.
 
@@ -355,13 +354,6 @@ Now that we have the data in tables in the database, we can do the next stages o
 </ul>
 </ul>
 
-# Next Steps after Data Prep
+## Next Steps after Data Prep
 
 Once the data is loading correctly into a PostgreSQL database on the local workstation, and we know that our ETL pipeline is functioning. We will migrate the database to a cloud based host so the rest of the team can access the prepared dataset.
-
-
-
-
-
-
-
