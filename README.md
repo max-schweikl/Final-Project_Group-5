@@ -318,7 +318,7 @@ We added a field to both movie tables, success, which determine if revenues was 
 
 ## First Pass at Database
 
-Now that our data is ready, we can build the three tables we need
+Now that our data is ready, we can build the tables we need
 
 <img src="week1/load_database.png">
 
