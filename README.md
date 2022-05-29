@@ -323,7 +323,7 @@ In the MovieLens table with the star ratings we added three new calculated field
 
 ## First Pass at Database
 
-Now that our data is ready, we can build the three tables we need
+Now that our data is ready, we can build the tables we need
 
 <img src="week1/load_database.png">
 
