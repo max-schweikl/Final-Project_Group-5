@@ -10,7 +10,7 @@ Our team was very specific around our schedules of availability over the course 
 ## Project Topic
 Our team all has an interest in various movie genres and love to watch both new films that are released as well as old films from prior years, and discuss our thoughts or opinions as to if we enjoyed the movie or not.  That being said, one area of curiosity is if one or more team member(s) likes a film, are they necessarily in the majority or not with others on the same opinions or views?  What exactly classifies a film as "successful" or "unsuccessful?"  What are the various input components of a film, such as cast/crew, producer, genre, production budget, release date and so on, that have the most influence on a film's success or not?  The question our group is looking to answer will be that of classification, in that for past released films, what input factors correlate the most with or drive the most success for a film, which we're defining as it's generated box office revenue producing at or more than double it's production budget.  From this, we can also hope to predict or infer on how successful future released films will be, based on prior trend of movies with similar production attributes.
 
-## Dataset Chosen
+## Dataset 
 We will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  To help keep the dataset from getting to large, we will add a .csv which identifies the top 100 actors by revenue.
 
 The following datasets will be used:
@@ -24,13 +24,18 @@ Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/
 ## Tools to Clean Data
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
 
-## Chosen Database
+## Database
 We'll be utilizing a SQL/PostGres database with the raw data contents being extracted as a .csv file.  once ETL is performed and the database is established, this will also be shared on an AWS RDS site for team collaboration.
 
-## Chosen Machine Learning Model
- We will be building a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
+## Machine Learning Model
+ We will be building a regression and random forest ML model to understand which movie production factors/features lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Our y-value is defined as the categorization of movie success, with 1=successful and 0=unsuccessful.  A bulk of preprocessing was done using OneHotEncoder to change categorical features in to usable numerical columns.  The initial features utilized were budget, rating, runtime, top 100 actors, directors, writers and composers (which was limited even further due to data size).
 
-## Chosen Dashboard
+### Machine Learning Model Initial Results
+- Logistic Regression: predicting all test data as success (even with rebalancing training data), which is not proper
+- Random Forest: predicting at 99.9% accuracy, which given amount of features we're working with, this accuracy is too great and likely overfitted (even with rebalancing)
+- Link to working code, descrption of process and results can be viewed further [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Segment%202/Segment%202%20-%20Machine%20Learning.md)
+
+## Dashboard
 Our team has chosen two visualization methods for this project.  The first being a Tableau dashboard, which shows, by genre (as a drop-down option), the total revenue over all years for the measured drop-down option, top movies by revenue and rating, average revenue and rating, the number of successful vs failed movies (success being defined as a movie making twice it's budget in revenue), and a line chart graph that measures genre by year (x-axis = year of movie release, y-axis = total revenue for all measured movies based on drop-down selection).
 - Link to Tableau storyboard can be found [here](https://docs.google.com/presentation/d/1ppohUS7lz0ywqLALRNWI7Y0NSrHBQvtAunWuu660ZdE/edit#slide=id.p)
 - Link to Tableau dashboard can be found [here](https://public.tableau.com/app/profile/bailey.van.ommeren/viz/FinalProjectDashboard_16535275197320/Dashboard1?publish=yes)
