@@ -7,7 +7,14 @@
     <title>Cinema Stats</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style> .jumbotron </style>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- <script src="http://d3js.org/" charset="utf-8"></script>-->
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+
+    <style> style.css </style>
+
 </head>
 <body>
     <div class="container">
@@ -17,22 +24,22 @@
       </div>
     </div>
 
-    <!╌ Genre dropdown menu ╌>
+    <!╌ /* Genre dropdown menu */ ╌>
     <div class="row">
-      <div class="col-md-2">
+    <div class="col-md-2">
         <div class="well">
           <h5>Genre</h5>
-          <!-- <select id="selDataset"></select> -->
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
+          <!-- /* <select id="selGenre"></select> */ -->
+          <select id="selGenre" onchange="optionChanged(this.value)"></select>
+        </div> 
 
         <!--/* Cast dropdown menu */-->
       <div class="row">
       <div class="col-md-2">
         <div class="well">
           <h5>Cast</h5>
-          <!-- <select id="selDataset"></select> -->
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <!-- /*<select id="selCast"></select> */ -->
+          <select id="selCast" onchange="optionChanged(this.value)"></select>
         </div>
 
         <!--/* Crew dropdown menu */-->
@@ -40,9 +47,13 @@
       <div class="col-md-2">
         <div class="well">
           <h5>Crew</h5>
-          <!-- <select id="selDataset"></select> -->
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <!-- <select id="selCrew"></select> -->
+          <select id="selCrew" onchange="optionChanged(this.value)"></select>
         </div>
+
+
+  <script src="plot.js"></script>
+  <script src="charts.js"></script>
 
 </body>
 </html>
