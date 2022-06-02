@@ -1,33 +1,50 @@
 # Final-Project_Group-5
 Final-Project_Group-5 Main repository for UofM Data Visualization &amp;amp; Analytics Boot Camp Final Project (Group 5), hosted by Max Schweikl, Stephanie Leonard, Randy Sendek, Lucas Bratland and Bailey Van Ommeren
 
+## Final Presentation
+The final group project presentation is linked to Google Slides [here](https://docs.google.com/presentation/d/1aXPEPfQH5vqG8aXMZKgjvpEcCv2Iga9h14h-E72lNf8/edit?usp=sharing).
+
 ## Communication Plan/Alignment
 Our team was very specific around our schedules of availability over the course of this project.  The goal is to complete most or all deliverable work within alloted class hours, with the additional option for the team to meet/discuss ad-hoc outside of classroom hours as needed.  Slack will service as the primary and most crucial communication tool for all project work, including but not limited to link sharing, direct group messaging and formal huddle/Zoom meeting.  One critical component will be aligning to a role ownership each week.  While some team members have more comfortability/favorability of roles over others, we will still make sure each role has the support ownership needed to exceed, whether it's doubling up on some work or a team member owning a component role more than once if they're efficiently completing deliverables in that space.
 
 ## Project Topic
 Our team all has an interest in various movie genres and love to watch both new films that are released as well as old films from prior years, and discuss our thoughts or opinions as to if we enjoyed the movie or not.  That being said, one area of curiosity is if one or more team member(s) likes a film, are they necessarily in the majority or not with others on the same opinions or views?  What exactly classifies a film as "successful" or "unsuccessful?"  What are the various input components of a film, such as cast/crew, producer, genre, production budget, release date and so on, that have the most influence on a film's success or not?  The question our group is looking to answer will be that of classification, in that for past released films, what input factors correlate the most with or drive the most success for a film, which we're defining as it's generated box office revenue producing at or more than double it's production budget.  From this, we can also hope to predict or infer on how successful future released films will be, based on prior trend of movies with similar production attributes.
 
-## Dataset Chosen
-At the moment, we will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  If this dataset is too large/overvalued, we will transition to an alternative option, which there are plenty available on the internet, most notably datasets accessed via IMDB.
+## Dataset 
+We will be utilizing a .csv dataset provided by the Kaggle, based on a dataset from the University of Minnesota that provides +26M movie review entries and a variety of different movie attributes, some of which were called out in the project topic headline above.  To help keep the dataset from getting to large, we will add a .csv which identifies the top 100 actors by revenue.
 
 The following datasets will be used:
 - movies_metadata.csv
 - credits.csv
 - ratings.csv
+- Top 100 Actors by Revenue.csv
+- Top 100 Directors by Revenue.csv
+- Top 100 Composers by Revenue.csv
 
-Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/rounakbanik/the-movies-dataset/download).
+Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/rounakbanik/the-movies-dataset/download) and [this website](https://www.the-numbers.com/box-office-star-records/domestic/lifetime-acting/top-grossing-leading-stars).
 
 ## Tools to Clean Data
 Python and Pandas will be utilized to clean our dataset throughout the length of this project.
 
-## Chosen Database
-Currently our group is leaning towards utilizing a SQL/PostGres database with the raw data contents being extracted as a .csv file.
+## Database
+We'll be utilizing a SQL/PostGres database with the raw data contents being extracted as a .csv file.  once ETL is performed and the database is established, this will also be shared on an AWS RDS site for team collaboration.
 
-## Chosen Machine Learning Model
- We would like to use a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
+## Machine Learning Model
+ We will be building a regression and random forest ML model to understand which movie production factors/features lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Our y-value is defined as the categorization of movie success, with 1=successful and 0=unsuccessful.  A bulk of preprocessing was done using OneHotEncoder to change categorical features in to usable numerical columns.  The initial features utilized were budget, rating, runtime, top 100 actors, directors, writers and composers (which was limited even further due to data size).
 
-## Chosen Dashboard
-Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated. 
+### Machine Learning Model Initial Results
+- Logistic Regression: predicting all test data as success (even with rebalancing training data), which is not proper
+- Random Forest: predicting at 99.9% accuracy, which given amount of features we're working with, this accuracy is too great and likely overfitted (even with rebalancing)
+- Link to working code, descrption of process and results can be viewed further [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Segment%202/Segment%202%20-%20Machine%20Learning.md)
+
+## Dashboard
+Our team has chosen two visualization methods for this project.  The first being a Tableau dashboard, which shows, by genre (as a drop-down option), the total revenue over all years for the measured drop-down option, top movies by revenue and rating, average revenue and rating, the number of successful vs failed movies (success being defined as a movie making twice it's budget in revenue), and a line chart graph that measures genre by year (x-axis = year of movie release, y-axis = total revenue for all measured movies based on drop-down selection).
+- Link to Tableau storyboard can be found [here](https://docs.google.com/presentation/d/1ppohUS7lz0ywqLALRNWI7Y0NSrHBQvtAunWuu660ZdE/edit#slide=id.p)
+- Link to Tableau dashboard can be found [here](https://public.tableau.com/app/profile/bailey.van.ommeren/viz/FinalProjectDashboard_16535275197320/Dashboard1?publish=yes)
+- Link to additional Tableau dashboard purpose/results/summary is also linked on Github [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Tableau_Dashboard.md)
+
+The second visualization is an HTML webpage with Javascript-enabled drop-down filters, which will be utilized for plugging in various movie attributes (ex: genre, cast/crew, release date, etc.) for plugging in and seeing which have the higher influence in determining movie success. 
+- Link to HTML webpage will be provided soon
 
 ## High Level Project Plan Diagram
 Find below a high-level project plan diagram
@@ -36,12 +53,12 @@ Find below a high-level project plan diagram
 <br>
 <hr/>
 
-# Data Analysis
+## Data Analysis
 
-## Data Source Selected
+### Data Source Selected
 Our group selected to utilize the full Kaggel movie database which was first seen in module 8 of the bootcamp, dealing with ETL. We chose this data source for completeness, size, and variability. 
 
-## Description of Source Data
+### Description of Source Data
 
 These files contain metadata for all 45,000 movies listed in the Full MovieLens Dataset. The dataset consists of movies released on or before July 2017. Data points include cast, crew, plot keywords, budget, revenue, posters, release dates, languages, production companies, countries, TMDB vote counts and vote averages.
 
@@ -178,6 +195,18 @@ Ratings are made on a 5-star scale, with half-star increments (0.5 stars - 5.0 s
 Timestamps represent seconds since midnight Coordinated Universal Time (UTC) of January 1, 1970.
 </td>
 </tr>
+<tr>
+<td>
+Top100_xxx.csv
+</td>
+<td>
+All of the Top 100 files are lists generated to provide a top 100 list by revenue of:
+- Actors
+- Directors
+- Composers
+</td>
+</tr>
+
 </table>
 
 ## Data Preparation
@@ -276,12 +305,11 @@ After the process runs, our final crew dataframe looks like:
 
 <img src="week1/crew_data.png">
 
-
 ## Calculated Fields
 
-## Ratings
+### Ratings
 
-Our data file for ratings, rating.csv, has 26,024,289 ratings for movies. The first set of calculated fields we want to do is to do counts of ratings by movie. 
+Our data file for ratings, rating.csv, has 26,024,289 ratings for movies. The first set of calculated fields we want to do is to do counts of ratings by movie. We build a pivot table with counts of movie id and star ratings.
 
 <img src="week1/ratings_count.png">
 
@@ -289,9 +317,32 @@ This will allow us to add these values to the movies data, and not have to keep 
 
 <img src="week1/movies_ratings_prep.png">
 
-# First pass at Database
+### Cast
 
-Now that our data is ready, we can build the three tables we need
+We incorporated the Top 100 actors by revenue list into the cast table. We added a field to the Cast table called Top100, we read in the top 100 list, and determined if the cast member of the movie was a part of the list:
+ - If so, we set Top100 to true
+ - If not, we set Top100 to false
+
+<img src="week3/cast_top_100.png">
+
+### Movie
+
+We determined our question for this was revolving around revenue and success of the movie. We added a field to both movie tables, success_level, which is a calculated field of two times the  movie’s budget
+
+ - [success_level] = [budget] * 2
+
+We added a field to both movie tables, success, which determine if revenues was higher than the calculated success level
+ - [success] = ([revenue] >= [success_level])
+
+<img src="week3/movie_success.png">
+
+In the MovieLens table with the star ratings we added three new calculated fields. To aid the analysis team, the ETL pipeline needed to add a field to calculate the total number of votes a movie got from MovieLens members. The next field we needed to add was a field for the total number of stars garnered by the movie. The final new field we calculated is field showing the average number of stars per vote.
+
+<img src="week3/avg_star.png">
+
+## First Pass at Database
+
+Now that our data is ready, we can build the tables we need
 
 <img src="week1/load_database.png">
 
@@ -307,7 +358,7 @@ We have the following tables loaded and ready for further analysis:
 </ul>
 </ul>
 
-# Next Steps in Data Prep for Analysis
+## Next Steps in Data Prep for Analysis
 
 Now that we have the data in tables in the database, we can do the next stages of data analysis with SQL.
 
@@ -352,13 +403,42 @@ Now that we have the data in tables in the database, we can do the next stages o
 </ul>
 </ul>
 
-# Next Steps after Data Prep
+## Next Steps after Data Prep
+
+### Build Database
 
 Once the data is loading correctly into a PostgreSQL database on the local workstation, and we know that our ETL pipeline is functioning. We will migrate the database to a cloud based host so the rest of the team can access the prepared dataset.
 
+The final data structure of the database looks like:
 
+<img src="week3/final_db.png">
 
+### Build Analytic Reference Files
 
+The top100_directors.csv and the top100_composers.csv were imported into the database. This allowed the ETL team to build a couple of reference tables in the database.
 
+The team could then utilize SQL to join the directors reference table to the the crew table looking for directors, and help the analytics team build reference lists for dashboard drop downs
+ 
+<pre>
+select distinct crew_id, crew.name
+from public.crew join public.top100dir
+on crew.name = top100dir.name
+where crew.job = 'Director'
+</pre>
 
+The team could then utilize SQL to join the composer reference table to the the crew table looking for composers, and help the analytics team build reference lists for dashboard drop downs
+ 
+<pre>
+select distinct crew_id, crew.name
+from public.crew join public.top100comp
+on crew.name = top100comp.name
+where crew.job = 'Music'
+</pre>
 
+The ETL team utilized SQL to build another reference file for the analytics team. A file was built containing the list of top 100 actors from the cast table. The produced file will be utilized to help build reference lists for dashboard drop downs.
+
+<pre>
+select distinct cast_id, name
+from public.cast
+where top100 = 'Y'
+</pre>
