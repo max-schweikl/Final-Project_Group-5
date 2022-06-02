@@ -17,7 +17,11 @@ The following datasets will be used:
 - movies_metadata.csv
 - credits.csv
 - ratings.csv
+- Top 100 Actors by Revenue.csv
+- Top 100 Directors by Revenue.csv
+- Top 100 Composers by Revenue.csv
 - Top100.csv
+
 
 Files were downloaded from [this linked Kaggle zip file](https://www.kaggle.com/rounakbanik/the-movies-dataset/download) and [this website](https://www.the-numbers.com/box-office-star-records/domestic/lifetime-acting/top-grossing-leading-stars).
 
@@ -29,6 +33,17 @@ We'll be utilizing a SQL/PostGres database with the raw data contents being extr
 
 ## Machine Learning Model
  We will be building a regression and random forest ML model to understand which movie production factors/features lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Our y-value is defined as the categorization of movie success, with 1=successful and 0=unsuccessful.  A bulk of preprocessing was done using OneHotEncoder to change categorical features in to usable numerical columns.  The initial features utilized were budget, rating, runtime, top 100 actors, directors, writers and composers (which was limited even further due to data size).
+
+### Machine Learning Model Initial Results
+- Logistic Regression: predicting all test data as success (even with rebalancing training data), which is not proper
+- Random Forest: predicting at 99.9% accuracy, which given amount of features we're working with, this accuracy is too great and likely overfitted (even with rebalancing)
+- Link to working code, descrption of process and results can be viewed further [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Segment%202/Segment%202%20-%20Machine%20Learning.md)
+
+## Dashboard
+Our team has chosen two visualization methods for this project.  The first being a Tableau dashboard, which shows, by genre (as a drop-down option), the total revenue over all years for the measured drop-down option, top movies by revenue and rating, average revenue and rating, the number of successful vs failed movies (success being defined as a movie making twice it's budget in revenue), and a line chart graph that measures genre by year (x-axis = year of movie release, y-axis = total revenue for all measured movies based on drop-down selection).
+- Link to Tableau storyboard can be found [here](https://docs.google.com/presentation/d/1ppohUS7lz0ywqLALRNWI7Y0NSrHBQvtAunWuu660ZdE/edit#slide=id.p)
+- Link to Tableau dashboard can be found [here](https://public.tableau.com/app/profile/bailey.van.ommeren/viz/FinalProjectDashboard_16535275197320/Dashboard1?publish=yes)
+- Link to additional Tableau dashboard purpose/results/summary is also linked on Github [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Tableau_Dashboard.md)
 
 ### Machine Learning Model Initial Results
 - Logistic Regression: predicting all test data as success (even with rebalancing training data), which is not proper
@@ -193,6 +208,18 @@ Ratings are made on a 5-star scale, with half-star increments (0.5 stars - 5.0 s
 Timestamps represent seconds since midnight Coordinated Universal Time (UTC) of January 1, 1970.
 </td>
 </tr>
+<tr>
+<td>
+Top100_xxx.csv
+</td>
+<td>
+All of the Top 100 files are lists generated to provide a top 100 list by revenue of:
+- Actors
+- Directors
+- Composers
+</td>
+</tr>
+
 </table>
 
 ## Data Preparation
@@ -295,7 +322,7 @@ After the process runs, our final crew dataframe looks like:
 
 ### Ratings
 
-Our data file for ratings, rating.csv, has 26,024,289 ratings for movies. The first set of calculated fields we want to do is to do counts of ratings by movie. 
+Our data file for ratings, rating.csv, has 26,024,289 ratings for movies. The first set of calculated fields we want to do is to do counts of ratings by movie. We build a pivot table with counts of movie id and star ratings.
 
 <img src="week1/ratings_count.png">
 
@@ -312,6 +339,10 @@ We incorporated the Top 100 actors by revenue list into the cast table. We added
 <img src="week3/cast_top_100.png">
 
 ### Movie
+
+We determined our question for this was revolving around revenue and success of the movie. We added a field to both movie tables, success_level, which is a calculated field of two times the  movie’s budget
+
+ - [success_level] = [budget] * 2
 
 We determined our question for this was revolving around revenue and success of the movie. We added a field to both movie tables, success_level, which is a calculated field of two times the  movie’s budget
 
@@ -391,8 +422,40 @@ Now that we have the data in tables in the database, we can do the next stages o
 
 ## Next Steps after Data Prep
 
+### Build Database
+
 Once the data is loading correctly into a PostgreSQL database on the local workstation, and we know that our ETL pipeline is functioning. We will migrate the database to a cloud based host so the rest of the team can access the prepared dataset.
 
 The final data structure of the database looks like:
 
 <img src="week3/final_db.png">
+
+### Build Analytic Reference Files
+
+The top100_directors.csv and the top100_composers.csv were imported into the database. This allowed the ETL team to build a couple of reference tables in the database.
+
+The team could then utilize SQL to join the directors reference table to the the crew table looking for directors, and help the analytics team build reference lists for dashboard drop downs
+ 
+<pre>
+select distinct crew_id, crew.name
+from public.crew join public.top100dir
+on crew.name = top100dir.name
+where crew.job = 'Director'
+</pre>
+
+The team could then utilize SQL to join the composer reference table to the the crew table looking for composers, and help the analytics team build reference lists for dashboard drop downs
+ 
+<pre>
+select distinct crew_id, crew.name
+from public.crew join public.top100comp
+on crew.name = top100comp.name
+where crew.job = 'Music'
+</pre>
+
+The ETL team utilized SQL to build another reference file for the analytics team. A file was built containing the list of top 100 actors from the cast table. The produced file will be utilized to help build reference lists for dashboard drop downs.
+
+<pre>
+select distinct cast_id, name
+from public.cast
+where top100 = 'Y'
+</pre>
