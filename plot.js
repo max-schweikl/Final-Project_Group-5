@@ -21,35 +21,48 @@ function init() {
         }
         });
         })
-    
 
-    // DIRECTORS //
-    // var selector = d3.select("#selDirector");
-    // d3.csv("archive/top100_unique3.csv", function (data) {
-    // var directors = data
-    //   directors.forEach((director) => {
-    //     console.log(director.name)
-    //     {selector
-    //       .append("option")
-    //       .text(director.name)
-    //       .property("value", director.name)
-    //     }});
-    //     })
-    // };
-
-    // COMPOSERS
-    var selector = d3.select("#selComposer");
+    // COMPOSERS //
+    var chooser = d3.select("#selComposer");
     d3.csv("archive/top100_composers.csv", function (data) {
     var composers = data
-      composers.forEach((composer) => {
-        console.log(composer.name)
-        {selector
+        composers.forEach((composer) => {
+            console.log(composer.name)
+            {chooser
+              .append("option")
+              .text(composer.name)
+              .property("value", composer.name)
+            }});
+            })
+
+    // DIRECTORS //
+    var direct = d3.select("#selDirector");
+    d3.csv("archive/top100_directors.csv", function (data) {
+    var directors = data
+      directors.forEach((director) => {
+        console.log(director.name)
+        {direct
           .append("option")
-          .text(composer.name)
-          .property("value", composer.name)
+          .text(director.name)
+          .property("value", director.name)
         }});
         })
+
+    // GENRE //
+    var gen = d3.select("#selGenre");
+    d3.csv("archive/alph_genres.csv", function (data) {
+    var genres = data
+      genres.forEach((genre) => {
+        console.log(genre.name)
+        {gen
+          .append("option")
+          .text(genre.name)
+          .property("value", genre.name)
+        }});
+        })
+
     };
+
 init()
 
 // initialize dashboard
