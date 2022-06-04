@@ -1,19 +1,21 @@
 // Print data
-d3.csv("archive/top100_unique4.csv", function (data){
-    console.log(data)
-    console.log(data[1])
-    console.log(data[1]["name"])
-    }
-);
+// d3.csv("archive/top100_unique4.csv", function (data){
+//     console.log(data)
+//     console.log(data[1])
+//     console.log(data[1]["name"])
+//     }
+// );
 
 // Dropdown menu func "init" ////////////////////////////////////
 function init() {
     // ACTORS //
     var selector = d3.select("#selCast");
-    d3.csv("archive/top100_actors.csv", function (data) {
-    var actors = data
+    // 
+    //  console.log(data)
+    d3.csv(filePath + "/archive/top100_actors.csv").then(function (data) {
+    let actors = data
       actors.forEach((actor) => {
-        console.log(actor.name)
+        // console.log(actor.name)
         {selector
           .append("option")
           .text(actor.name)
@@ -23,12 +25,12 @@ function init() {
         })
 
     // COMPOSERS //
-    var chooser = d3.select("#selComposer");
-    d3.csv("archive/top100_composers.csv", function (data) {
+    var compose = d3.select("#selComposer");
+    d3.csv(filePath +"archive/top100_composers.csv").then( function (data) {
     var composers = data
         composers.forEach((composer) => {
-            console.log(composer.name)
-            {chooser
+            // console.log(composer.name)
+            {compose
               .append("option")
               .text(composer.name)
               .property("value", composer.name)
@@ -37,10 +39,10 @@ function init() {
 
     // DIRECTORS //
     var direct = d3.select("#selDirector");
-    d3.csv("archive/top100_directors.csv", function (data) {
+    d3.csv(filePath +"archive/top100_directors.csv").then(function (data) {
     var directors = data
       directors.forEach((director) => {
-        console.log(director.name)
+        // console.log(director.name)
         {direct
           .append("option")
           .text(director.name)
@@ -50,10 +52,11 @@ function init() {
 
     // GENRE //
     var gen = d3.select("#selGenre");
-    d3.csv("archive/alph_genres.csv", function (data) {
+    // d3.csv(filePath +"archive/alph_genres.csv", function (data) {
+    d3.csv(filePath +"archive/alph_genres.csv").then (function(data) {
     var genres = data
       genres.forEach((genre) => {
-        console.log(genre.name)
+        // console.log(genre.name)
         {gen
           .append("option")
           .text(genre.name)
@@ -64,9 +67,6 @@ function init() {
     };
 
 init()
-
-// initialize dashboard
-// init();
 
     // OPTIONCHANGED
     // function optionChanged(newCast) {
