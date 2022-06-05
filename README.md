@@ -1,5 +1,5 @@
-# Final-Project_Group-5
-Final-Project_Group-5 Main repository for UofM Data Visualization &amp;amp; Analytics Boot Camp Final Project (Group 5), hosted by Max Schweikl, Stephanie Leonard, Randy Sendek, Lucas Bratland and Bailey Van Ommeren
+# Predicting Success in the Motion Picture FIlm Industry
+Main repository for UofM Data Visualization & Analytics Boot Camp Final Project (Group 5), hosted by Max Schweikl, Stephanie Leonard, Randy Sendek, Lucas Bratland and Bailey Van Ommeren
 
 ## Final Presentation
 The final group project presentation is linked to Google Slides [here](https://docs.google.com/presentation/d/1aXPEPfQH5vqG8aXMZKgjvpEcCv2Iga9h14h-E72lNf8/edit?usp=sharing).
