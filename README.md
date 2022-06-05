@@ -46,17 +46,6 @@ Our team has chosen two visualization methods for this project.  The first being
 - Link to Tableau dashboard can be found [here](https://public.tableau.com/app/profile/bailey.van.ommeren/viz/FinalProjectDashboard_16535275197320/Dashboard1?publish=yes)
 - Link to additional Tableau dashboard purpose/results/summary is also linked on Github [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Tableau_Dashboard.md)
 
-### Machine Learning Model Initial Results
-- Logistic Regression: predicting all test data as success (even with rebalancing training data), which is not proper
-- Random Forest: predicting at 99.9% accuracy, which given amount of features we're working with, this accuracy is too great and likely overfitted (even with rebalancing)
-- Link to working code, descrption of process and results can be viewed further [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Segment%202/Segment%202%20-%20Machine%20Learning.md)
-
-## Dashboard
-Our team has chosen two visualization methods for this project.  The first being a Tableau dashboard, which shows, by genre (as a drop-down option), the total revenue over all years for the measured drop-down option, top movies by revenue and rating, average revenue and rating, the number of successful vs failed movies (success being defined as a movie making twice it's budget in revenue), and a line chart graph that measures genre by year (x-axis = year of movie release, y-axis = total revenue for all measured movies based on drop-down selection).
-- Link to Tableau storyboard can be found [here](https://docs.google.com/presentation/d/1ppohUS7lz0ywqLALRNWI7Y0NSrHBQvtAunWuu660ZdE/edit#slide=id.p)
-- Link to Tableau dashboard can be found [here](https://public.tableau.com/app/profile/bailey.van.ommeren/viz/FinalProjectDashboard_16535275197320/Dashboard1?publish=yes)
-- Link to additional Tableau dashboard purpose/results/summary is also linked on Github [here](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Tableau_Dashboard.md)
-
 The second visualization is an HTML webpage with Javascript-enabled drop-down filters, which will be utilized for plugging in various movie attributes (ex: genre, cast/crew, release date, etc.) for plugging in and seeing which have the higher influence in determining movie success. 
 - Link to HTML webpage will be provided soon
 
