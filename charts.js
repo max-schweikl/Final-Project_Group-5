@@ -1,8 +1,8 @@
-function init() {
+function init_chart() {
     // Grab a reference to the dropdown select element
     var selector = d3.select("#selCast");
   }
-// INITIALIZE DASHBOARD ///////////////////////////////////////////
+// INITIALIZE DASHBOARD 
 init();
 function optionChangedCast(newActor) {
   newGenre = d3.select('#selGenre').node().value
@@ -105,7 +105,7 @@ var barData = [{
 })
 };
 
-  // CHART: Genre
+// CHART: Genre
 function optionChangedGenre(newActor) {
   newGenre = d3.select('#selGenre').node().value
   d3.json("/getDataGenre/"+newGenre, {
@@ -114,11 +114,25 @@ function optionChangedGenre(newActor) {
         "Content-type": "application/json; charset=UTF-8"
     },
     body: JSON.stringify(newGenre)
-  }).then(function (data) {
-    console.log(data[0]['count'])
-  g_count = d3.select("#genreCount").text(data[0]['count'])
-  g_rev = d3.select("#genreRev").text(data[0]['sum'])
-  // g_count = data[0]['count']
-  // g_rev = data[0]['sum']
-})
-};
+}).then(function (data) {
+  console.log(data)
+  x_vals = data.map(x => x.name)
+  console.log(x_vals)
+  y_vals = data.map(y => y.sum)
+  console.log(y_vals)
+  // Create the trace for the bar chart.
+  var barData = [{
+   x: x_vals,
+   y: y_vals,
+        type: "bar"
+      }];
+      // Create the layout for the bar chart.
+      var barLayout = {
+        title: "Success by Genre",
+        xaxis: { title: "Genre"},
+        yaxis:  { title: "Revenue"}
+      };
+      // Use Plotly to plot the data with the layout.
+      Plotly.newPlot("bar", barData, barLayout);
+  })
+  };
