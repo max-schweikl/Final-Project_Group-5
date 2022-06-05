@@ -52,7 +52,7 @@ The second visualization is an HTML webpage with Javascript-enabled drop-down fi
 ## High Level Project Plan Diagram
 Find below a high-level project plan diagram
 
-![Project Plan](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Project_Plan.PNG)
+![Project Plan](https://github.com/max-schweikl/Final-Project_Group-5/blob/main/Project%20Blueprint.png)
 <br>
 <hr/>
 
