@@ -5,7 +5,6 @@ function init_chart() {
 // INITIALIZE DASHBOARD 
 init();
 function optionChangedCast(newActor) {
-  newGenre = d3.select('#selGenre').node().value
   newCast = d3.select('#selCast').node().value
 
   // CHART: Cast
@@ -27,21 +26,20 @@ function optionChangedCast(newActor) {
    y: y_vals,
         type: "bar"
       }];
-      // Create the layout for the bar chart.
-      var barLayout = {
-        title: "Actor's Successful Movies",
-        xaxis: { title: "Movie Titles"},
-        yaxis:  { title: "Revenue"}
-      };
+  // Create the layout for the bar chart.
+  var barLayout = {
+  title: "Actor's Movies",
+  xaxis: { title: "Movie Titles",
+        automargin: true},
+  yaxis:  { title: "Revenue"}
+  };
+
       // Use Plotly to plot the data with the layout.
       Plotly.newPlot("bar", barData, barLayout);
 })
 }
 function optionChangedDirector(newActor) {
-  newGenre = d3.select('#selGenre').node().value
   newDirect = d3.select('#selDirector').node().value
-  newComposer = d3.select('#selComposer').node().value
-
   // CHART: Director
   d3.json("/getDataDirector/"+newDirect, {
     method: 'POST',
@@ -63,8 +61,9 @@ function optionChangedDirector(newActor) {
       }];
       // Create the layout for the bar chart.
       var barLayout = {
-        title: "Director's Successful Movies",
-        xaxis: { title: "Movie Titles"},
+        title: "Director's Movies",
+        xaxis: { title: "Movie Titles",
+              automargin: true},
         yaxis:  { title: "Revenue"}
       };
       // Use Plotly to plot the data with the layout.
@@ -74,7 +73,6 @@ function optionChangedDirector(newActor) {
 
 // CHART: Composer
 function optionChangedComposer(newActor) {
-  newGenre = d3.select('#selGenre').node().value
   newComposer = d3.select('#selComposer').node().value
 d3.json("/getDataComposer/"+newComposer, {
   method: 'POST',
@@ -96,8 +94,9 @@ var barData = [{
     }];
     // Create the layout for the bar chart.
     var barLayout = {
-      title: "Composer's Successful Movies",
-      xaxis: { title: "Movie Titles"},
+      title: "Composer's Movies",
+      xaxis: { title: "Movie Titles",
+            automargin: true},
       yaxis:  { title: "Revenue"}
     };
     // Use Plotly to plot the data with the layout.
