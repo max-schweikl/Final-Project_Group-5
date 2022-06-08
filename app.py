@@ -54,5 +54,11 @@ def getDataGenre(actor):
     moviesFile = pandas.read_csv(filePath +"\\static\\archive\\movies_ratings.csv")
     genreFile = pandas.read_csv(filePath + "\\static\\archive\\genre_counts3.csv")
     return jsonify(genreFile.to_dict("records"))
+@app.route("/getDataRatings/<actor>", methods=["POST", "GET"])
+def getDataRatings(actor):
+    filePath = os.getcwd()
+    # Read in csv's
+    voteFile = pandas.read_csv(filePath + "\\static\\archive\\avg_rev_vote.csv")
+    return jsonify(voteFile.to_dict("records"))
 if __name__ == "__main__":
     app.run(debug=True)

@@ -59,6 +59,15 @@
           <!-- <select id="selComposer"></select> -->
           <select id="selComposer" onchange="optionChangedComposer(this.value)"></select>
         </div>
+
+        <!--/* Ratings dropdown menu */-->
+        <div class="row">
+        <div class="col-md-2">
+        <div class="well">
+          <h5>Ratings</h5>
+          <!-- /* <select id="selRating"></select> */ -->
+          <select id="selRating" onchange="optionChangedRating(this.value)"></select>
+        </div>
 <div id="bar"></div>
 <script> 
   var filePath="{{url_for('static', filename='')}}"

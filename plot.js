@@ -50,5 +50,18 @@ function init() {
         }
       });
     })
-  };
+
+  // RATING //
+  var rate = d3.select("#selRating");
+  d3.csv(filePath +"archive/avg_rev_vote.csv").then (function(data) {
+  var ratings = data
+    ratings.forEach((rating) => {
+      {rate
+        .append("option")
+        .text("Ratings vs Revenue")
+        .property("value", rating.vote)
+      }
+    });
+  })
+};
 init()
