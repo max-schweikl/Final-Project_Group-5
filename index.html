@@ -69,13 +69,13 @@
           <select id="selRating" onchange="optionChangedRating(this.value)"></select>
         </div>
 <div id="bar"></div>
-<script> 
+<!-- /* <script> 
   var filePath="{{url_for('static', filename='')}}"
   console.log(filePath)
-</script>
+</script> */ -->
 
-  <script src="{{ url_for('static', filename='plot.js') }}"></script>
-  <script src="{{ url_for('static', filename='charts.js') }}"></script>
+  <script src="static/plot.js"></script>
+  <script src="static/charts.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </body>
