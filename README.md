@@ -17,5 +17,5 @@ Python and Pandas will be utilized to clean our dataset throughout the length of
 Currently our group is leaning towards utilizing a SQL/PostGres database with the raw data contents being extracted as a .csv file.
 
 ## Chosen Machine Learning Model
-Our team is currently considering utilizing matplotlib for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated.  We would like to use a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
+Our team utilized a javascript enabled html page with plotly for our visualizations on this project, comparing various movie input components against their resulting revenue that was generated.  We would like to use a regression ML model to understand which movie production factors lead to the highest revenue success, as well as which attributes are either not correlated/connected as strongly.  Being this is a categorization question, it may also be worth exploring if a decision tree model also makes the most sense for our analyis here too.
 
